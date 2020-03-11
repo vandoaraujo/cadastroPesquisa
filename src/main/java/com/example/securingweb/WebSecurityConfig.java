@@ -14,6 +14,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] AUTH_LIST = {
             "/",
             "/hello",
+            "/login",
             "/home"
         };
 
@@ -22,7 +23,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             http.csrf().disable().authorizeRequests()
                     .antMatchers(AUTH_LIST).permitAll()
                     .anyRequest().authenticated()
-                    .and().formLogin().permitAll()
+                    .and().formLogin().loginPage("/login").permitAll()
                     .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
         }
 

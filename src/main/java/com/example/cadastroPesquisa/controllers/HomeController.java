@@ -1,4 +1,4 @@
-package com.example.cadastroPesquisa;
+package com.example.cadastroPesquisa.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,11 +8,21 @@ public class HomeController {
  
   @GetMapping("/login")
   public String login() {
-    return "login"; // <<< Retorna a página de login
+    return "login";
+  }
+  
+  @GetMapping("/home")
+  public String home() {
+    return "home";
+  }
+  
+  @GetMapping("/hello")
+  public String hello() {
+    return "hello";
   }
    
   @GetMapping("/")
   public String index() {
-    return "inicio";
+    return "index";
   }
 }
